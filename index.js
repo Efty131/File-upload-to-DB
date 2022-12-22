@@ -28,7 +28,7 @@ const connectDB = async () =>{
 };
 
 app.get("/", (req, res) => {
-    res.status(200).send('Home Route')
+    res.status(200).sendFile(__dirname + "/home.html")
 });
 app.get("/register", (req, res) => {
     res.status(200).sendFile(__dirname + "/index.html")
