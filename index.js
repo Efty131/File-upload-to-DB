@@ -3,9 +3,14 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 const multer = require("multer");
 const colour = require("colour");
+const cors = require("cors");
+const app = express();
 require("dotenv").config();
 
-const app = express();
+app.use(cors({
+  origin:"*",
+}));
+
 // body te data asle parse korar jonno
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
